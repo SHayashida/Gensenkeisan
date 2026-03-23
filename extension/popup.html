@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>源泉計算ツール</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h2>源泉カンタン計算</h2>
+            <p>原稿料・講演料等の源泉徴収税額</p>
+        </header>
+
+        <main>
+            <div class="input-group">
+                <label for="amount">請求額（円）</label>
+                <input type="text" id="amount" placeholder="例: 50000" autofocus>
+            </div>
+
+            <div class="toggle-group">
+                <span class="toggle-label">消費税</span>
+                <div class="radio-switch">
+                    <input type="radio" id="taxEx" name="taxType" value="exclusive" checked>
+                    <label for="taxEx">税別</label>
+                    <input type="radio" id="taxIn" name="taxType" value="inclusive">
+                    <label for="taxIn">税込</label>
+                </div>
+            </div>
+
+            <div class="results">
+                <div class="result-row">
+                    <span>請求金額</span>
+                    <div class="val-group">
+                        <strong id="res-amount">0</strong><span>円</span>
+                        <button class="copy-icon" data-target="res-amount" title="コピー">📋</button>
+                    </div>
+                </div>
+                <div class="result-row" id="row-tax">
+                    <span>消費税額(10%)</span>
+                    <div class="val-group">
+                        <strong id="res-tax">0</strong><span>円</span>
+                        <button class="copy-icon" data-target="res-tax" title="コピー">📋</button>
+                    </div>
+                </div>
+                <div class="result-row warning-text">
+                    <span>源泉徴収税額</span>
+                    <div class="val-group">
+                        <strong id="res-withholding">0</strong><span>円</span>
+                        <button class="copy-icon" data-target="res-withholding" title="コピー">📋</button>
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <div class="result-row total-row">
+                    <span>差引支払金額</span>
+                    <div class="val-group">
+                        <strong id="res-total">0</strong><span>円</span>
+                        <button class="copy-icon" data-target="res-total" title="コピー">📋</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button id="copy-all-btn" class="primary-btn">結果をすべてコピー</button>
+            </div>
+            <div id="toast" class="toast">コピーしました</div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

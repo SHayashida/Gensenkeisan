@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "源泉カンタン計算",
+  "version": "1.0",
+  "description": "原稿料や講演料等の源泉徴収税額を素早く計算・コピーできる拡張機能",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "源泉税を計算"
+  },
+  "permissions": [
+    "clipboardWrite"
+  ]
+}
